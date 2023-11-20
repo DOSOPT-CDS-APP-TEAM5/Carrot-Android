@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="carrot_primary_button">#FF6F0F</color>
+    <color name="carrot_primary_background">#FFEBDD</color>
+    <color name="carrot_secondary_blue">#5BBBEE</color>
+    <color name="carrot_black">#212529</color>
+    <color name="carrot_grey500">#505156</color>
+    <color name="carrot_grey400">#868E96</color>
+    <color name="carrot_grey300">#ACB0B9</color>
+    <color name="carrot_grey200">#DDDEE3</color>
+    <color name="carrot_grey100">#F2F3F7</color>
+    <color name="carrot_white">#FFFFFF</color>
 </resources>
