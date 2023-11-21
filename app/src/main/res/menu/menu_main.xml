@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/menu_life"
+        android:icon="@drawable/ic_life"
+        android:title="@string/life"/>
+    <item
+        android:id="@+id/menu_nearby"
+        android:icon="@drawable/ic_nearby"
+        android:title="@string/nearby"/>
+    <item
+        android:id="@+id/menu_chatting"
+        android:icon="@drawable/ic_chatting"
+        android:title="@string/chatting"/>
+    <item
+        android:id="@+id/menu_mypage"
+        android:icon="@drawable/ic_mypage"
+        android:title="@string/my_carrot"/>
+</menu>
