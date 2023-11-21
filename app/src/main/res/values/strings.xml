@@ -6,4 +6,8 @@
     <string name="nearby">내 근처</string>
     <string name="chatting">채팅</string>
     <string name="my_carrot">나의 당근</string>
+
+    <!-- 동네 생활 string resources -->
+    <string name="sample_neighborhood_name">동천동</string>
+    <string name="explore_meeting">모임 더 둘러보기</string>
 </resources>
