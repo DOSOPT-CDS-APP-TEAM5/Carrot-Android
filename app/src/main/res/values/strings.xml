@@ -6,4 +6,12 @@
     <string name="nearby">내 근처</string>
     <string name="chatting">채팅</string>
     <string name="my_carrot">나의 당근</string>
+    <string name="join_meeting_title">[수지] 테니스 치실 동네분들 모십니다 ^^</string>
+    <string name="join_meeting_look_member">40명의 멤버 보기</string>
+    <string name="excercise">운동</string>
+    <string name="join_meeting_age">23~53세</string>
+    <string name="join_meeting_everything">전체</string>
+    <string name="join_meeting_album">앨범</string>
+    <string name="join_meeting_schedule">일정</string>
+    <string name="join_meeting_notice">게시판</string>
 </resources>

@@ -1,19 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.joinmeeting.JoinMeetingActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="모임 가입하기(현지 페이지)"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/iv_join_meeting_background"
+                android:layout_width="0dp"
+                android:layout_height="164dp"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_join_meeting_profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="144dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_join_meeting_meatball_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_meatball_circle"
+                app:layout_constraintBottom_toBottomOf="@id/iv_join_meeting_profile"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_join_meeting_share_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="9dp"
+                android:src="@drawable/ic_share_circle"
+                app:layout_constraintBottom_toBottomOf="@id/iv_join_meeting_meatball_circle"
+                app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_meatball_circle" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_eb"
+                android:paddingStart="1dp"
+                android:text="@string/join_meeting_title"
+                android:textColor="@color/carrot_black"
+                android:textSize="19sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_join_meeting_meatball_circle"
+                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_profile"
+                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_profile" />
+
+            <ImageView
+                android:id="@+id/iv_join_meeting_look_member"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/join_meeting_look_member"
+                app:layout_constraintEnd_toEndOf="@id/iv_join_meeting_meatball_circle"
+                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_profile"
+                app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_title" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_look_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_b"
+                android:text="@string/join_meeting_look_member"
+                android:textColor="@color/carrot_primary_button"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_join_meeting_look_member"
+                app:layout_constraintEnd_toEndOf="@id/iv_join_meeting_look_member"
+                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_look_member"
+                app:layout_constraintTop_toTopOf="@id/iv_join_meeting_look_member" />
+
+            <ImageView
+                android:id="@+id/iv_join_meeting_look_member_chevron_down"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="3dp"
+                android:src="@drawable/chevron_down_orange"
+                app:layout_constraintBottom_toBottomOf="@id/tv_join_meeting_look_member"
+                app:layout_constraintStart_toEndOf="@id/tv_join_meeting_look_member"
+                app:layout_constraintTop_toTopOf="@id/tv_join_meeting_look_member" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_excercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/join_meeting_grey_background"
+                android:fontFamily="@font/apple_sd_gothic_neo_m"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="@string/excercise"
+                android:textColor="@color/carrot_grey500"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_look_member"
+                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_look_member" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/join_meeting_grey_background"
+                android:fontFamily="@font/apple_sd_gothic_neo_m"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="@string/join_meeting_age"
+                android:textColor="@color/carrot_grey500"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/tv_join_meeting_excercise"
+                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_look_member" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_m"
+                android:text="hello"
+                android:textColor="@color/carrot_black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_excercise" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_eveything"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/apple_sd_gothic_neo_b"
+                android:paddingVertical="10dp"
+                android:text="@string/join_meeting_everything"
+                android:textColor="@color/carrot_black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_join_meeting_album"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_content" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_b"
+                android:paddingVertical="10dp"
+                android:text="@string/join_meeting_album"
+                android:textColor="@color/carrot_grey400"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_join_meeting_schedule"
+                app:layout_constraintStart_toEndOf="@id/tv_join_meeting_eveything"
+                app:layout_constraintTop_toTopOf="@id/tv_join_meeting_eveything" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_b"
+                android:paddingVertical="10dp"
+                android:text="@string/join_meeting_schedule"
+                android:textColor="@color/carrot_grey400"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_join_meeting_notice"
+                app:layout_constraintStart_toEndOf="@id/tv_join_meeting_album"
+                app:layout_constraintTop_toTopOf="@id/tv_join_meeting_eveything" />
+
+            <TextView
+                android:id="@+id/tv_join_meeting_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/apple_sd_gothic_neo_b"
+                android:paddingVertical="10dp"
+                android:text="@string/join_meeting_notice"
+                android:textColor="@color/carrot_grey400"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_join_meeting_schedule"
+                app:layout_constraintTop_toTopOf="@id/tv_join_meeting_eveything" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>
