@@ -8,79 +8,79 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.TitleHead">
+    <style name="TextAppearance.AppleSDGothic.TitleHead" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_b</item>
         <item name="android:textSize">25sp</item>
         <item name="lineHeight">30sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.Head">
+    <style name="TextAppearance.AppleSDGothic.Head" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_eb</item>
         <item name="android:textSize">19sp</item>
         <item name="lineHeight">23sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.Button">
+    <style name="TextAppearance.AppleSDGothic.Button" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_b</item>
         <item name="android:textSize">18sp</item>
         <item name="lineHeight">22sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.Info">
+    <style name="TextAppearance.AppleSDGothic.Info" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_m</item>
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">19sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.TitleBd">
+    <style name="TextAppearance.AppleSDGothic.TitleBd" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_b</item>
         <item name="android:textSize">15sp</item>
         <item name="lineHeight">18sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.TitleMd">
+    <style name="TextAppearance.AppleSDGothic.TitleMd" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_m</item>
         <item name="android:textSize">15sp</item>
         <item name="lineHeight">18sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.Subtitle">
+    <style name="TextAppearance.AppleSDGothic.Subtitle" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_b</item>
         <item name="android:textSize">14sp</item>
         <item name="lineHeight">17sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.Body">
+    <style name="TextAppearance.AppleSDGothic.Body" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_m</item>
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">19sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.Tag">
+    <style name="TextAppearance.AppleSDGothic.Tag" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_r</item>
         <item name="android:textSize">10sp</item>
         <item name="lineHeight">12sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.BodyNumber">
+    <style name="TextAppearance.AppleSDGothic.BodyNumber" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_m</item>
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">19sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.InfoNumber">
+    <style name="TextAppearance.AppleSDGothic.InfoNumber" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_m</item>
         <item name="android:textSize">11sp</item>
         <item name="lineHeight">18sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.InfoUnder">
+    <style name="TextAppearance.AppleSDGothic.InfoUnder" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_m</item>
         <item name="android:textSize">16sp</item>
         <item name="lineHeight">19sp</item>
     </style>
 
-    <style name="TextAppearance.AppleSDGothic.BodyUnder">
+    <style name="TextAppearance.AppleSDGothic.BodyUnder" parent="TextAppearance.AppleSDGothic">
         <item name="fontFamily">@font/apple_sd_gothic_neo_r</item>
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">14sp</item>
