@@ -18,11 +18,17 @@ class NeighborhoodLifeFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initCarouselTextDummyAdapter()
+        initCarouselTagDummyAdapter()
+    }
+
+    private fun initCarouselTextDummyAdapter() {
         carouselTextAdapter = CarouselTextAdapter()
         binding.rcvMeeting.adapter = carouselTextAdapter
-//        binding.rcvMeeting.layoutManager = LinearLayoutManager(requireContext())
         carouselTextAdapter.submitList(carouselTextList)
+    }
 
+    private fun initCarouselTagDummyAdapter() {
         carouselTagAdapter = CarouselTagAdapter()
         binding.rcvTopic.adapter = carouselTagAdapter
         carouselTagAdapter.submitList(carouselTagList)
