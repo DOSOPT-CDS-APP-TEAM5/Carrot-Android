@@ -1,6 +1,6 @@
 package org.sopt.carrot.presentation.neighborhoodlife.dummy
 
-val carouselTag = listOf<String>(
+val carouselTagList = listOf<String>(
     "주제",
     "동네백과",
     "동네질문",
