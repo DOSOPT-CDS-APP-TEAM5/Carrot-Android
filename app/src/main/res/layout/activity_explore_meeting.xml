@@ -6,23 +6,127 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingHorizontal="15dp"
         tools:context=".presentation.exploremeeting.ExploreMeetingActivity">
 
         <TextView
+            android:id="@+id/tv_explore_meeting_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="모임 더 둘러보기(삭이페이지)"
+            android:layout_marginTop="14dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="9dp"
+            android:text="동천동 모임"
+            android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="48dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
+            app:layout_constraintEnd_toStartOf="@+id/iv_alarm"
+            app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
+
+        <ImageView
+            android:id="@+id/iv_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_alarm"
+            app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etv_home_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/carrot_grey100"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="9dp"
+            android:hint="우리 동네 모임을 검색해보세요."
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleMd"
+            android:textColor="@color/carrot_grey300"
+            app:layout_constraintTop_toBottomOf="@id/tv_explore_meeting_title" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_explore_meeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etv_home_search"
+            app:tabIndicatorColor="@color/carrot_black"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorHeight="2dp"
+            app:tabTextAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+            app:tabTextColor="@color/selector_tablayout_text">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="전체모임" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="나의 모임 일" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/tv_neighbor_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15dp"
+            android:text="우리동네 모임"
+            android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_explore_meeting" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_neighbor_meeting"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_neighbor_title"
+            app:tabIndicatorColor="@color/carrot_black"
+            app:tabIndicatorFullWidth="true"
+            app:tabIndicatorHeight="2dp"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/TextAppearance.AppleSDGothic.Subtitle"
+            app:tabTextColor="@color/selector_tablayout_text" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager_meeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@id/tl_neighbor_meeting" />
 
         <Button
             android:id="@+id/btn_sample"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="모임"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
