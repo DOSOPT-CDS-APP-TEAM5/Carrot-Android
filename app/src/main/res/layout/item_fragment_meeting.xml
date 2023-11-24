@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:background="@drawable/shape_grey200_fill_14_rect"
-            android:drawableEnd="@drawable/ic_down"
             android:paddingHorizontal="10dp"
             android:paddingVertical="5dp"
             android:text="가까운 동네만"

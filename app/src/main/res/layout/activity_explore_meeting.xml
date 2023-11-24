@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="15dp"
@@ -157,7 +162,7 @@
             android:id="@+id/tv_meeting_highlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="새로 생겼어요"
+            android:text="모임 둘러보기"
             android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
             android:textColor="@color/carrot_black"
             app:layout_constraintStart_toStartOf="parent"
@@ -167,11 +172,24 @@
             android:id="@+id/rv_meeting_highlight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingVertical="4dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_meeting_highlight" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="37dp"
+            android:paddingVertical="10dp"
+            android:text="원하는 모임이 없나요?"
+            android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyNumber"
+            android:textColor="@color/carrot_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_meeting_highlight" />
 
         <Button
             android:id="@+id/btn_sample"
@@ -182,4 +200,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </layout>
