@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import org.sopt.carrot.R
 import org.sopt.carrot.core.ui.base.BindingFragment
+import org.sopt.carrot.core.ui.fragment.snackBar
 import org.sopt.carrot.databinding.FragmentNeighborhoodLifeBinding
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTagAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTextAdapter
@@ -30,6 +31,7 @@ class NeighborhoodLifeFragment :
         initNeighborhoodLifeAdapter()
         initLives()
         setOnClickProfile()
+        observeData()
     }
 
     private fun initLives() {
@@ -57,6 +59,16 @@ class NeighborhoodLifeFragment :
     private fun initNeighborhoodLifeAdapter() {
         neighborhoodLifeAdapter = NeighborhoodLifeAdapter()
         binding.rcvContents.adapter = neighborhoodLifeAdapter
+    }
+
+    private fun observeData() {
+        neighborhoodViewModel.livesList.observe(viewLifecycleOwner) {
+            if (it.isEmpty()) {
+                snackBar(binding.root) { "빈 동네 생활 리스트 입니다." }
+                return@observe
+            }
+            neighborhoodLifeAdapter.submitList(it)
+        }
     }
 
     fun newInstance(): Fragment = NeighborhoodLifeFragment()
