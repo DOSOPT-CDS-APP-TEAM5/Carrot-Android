@@ -11,7 +11,7 @@
         android:layout_marginVertical="8dp"
         android:fontFamily="@font/apple_sd_gothic_neo_m"
         android:text="@string/title"
-        android:textColor="@color/carrot_primary_button"
+        android:textColor="@color/carrot_grey400"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.joinmeeting.JoinMeetingActivity">
@@ -16,6 +16,8 @@
                 android:id="@+id/iv_join_meeting_background"
                 android:layout_width="0dp"
                 android:layout_height="164dp"
+                android:layout_marginBottom="10dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -23,10 +25,15 @@
 
             <ImageView
                 android:id="@+id/iv_join_meeting_profile"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="144dp"
+                android:layout_marginEnd="171dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_share_circle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,19 +41,21 @@
                 android:id="@+id/iv_join_meeting_meatball_circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:src="@drawable/ic_meatball_circle"
-                app:layout_constraintBottom_toBottomOf="@id/iv_join_meeting_profile"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_background" />
 
             <ImageView
                 android:id="@+id/iv_join_meeting_share_circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="9dp"
                 android:src="@drawable/ic_share_circle"
-                app:layout_constraintBottom_toBottomOf="@id/iv_join_meeting_meatball_circle"
-                app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_meatball_circle" />
+                app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_meatball_circle"
+                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_background" />
 
             <TextView
                 android:id="@+id/tv_join_meeting_title"
@@ -62,39 +71,44 @@
                 app:layout_constraintStart_toStartOf="@id/iv_join_meeting_profile"
                 app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_profile" />
 
-            <ImageView
-                android:id="@+id/iv_join_meeting_look_member"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_join_meeting_look_member"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/join_meeting_look_member"
-                app:layout_constraintEnd_toEndOf="@id/iv_join_meeting_meatball_circle"
-                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_profile"
-                app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_title" />
-
-            <TextView
-                android:id="@+id/tv_join_meeting_look_member"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="3dp"
-                android:fontFamily="@font/apple_sd_gothic_neo_b"
-                android:text="@string/join_meeting_look_member"
-                android:textColor="@color/carrot_primary_button"
-                android:textSize="13dp"
-                app:layout_constraintBottom_toBottomOf="@id/iv_join_meeting_look_member"
-                app:layout_constraintEnd_toEndOf="@id/iv_join_meeting_look_member"
-                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_look_member"
-                app:layout_constraintTop_toTopOf="@id/iv_join_meeting_look_member" />
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/join_meeting_look_member"
+                app:layout_constraintBottom_toTopOf="@id/tv_join_meeting_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_excercise">
 
-            <ImageView
-                android:id="@+id/iv_join_meeting_look_member_chevron_down"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="3dp"
-                android:src="@drawable/chevron_down_orange"
-                app:layout_constraintBottom_toBottomOf="@id/tv_join_meeting_look_member"
-                app:layout_constraintStart_toEndOf="@id/tv_join_meeting_look_member"
-                app:layout_constraintTop_toTopOf="@id/tv_join_meeting_look_member" />
+                <TextView
+                    android:id="@+id/tv_join_meeting_look_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:layout_marginEnd="3dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_b"
+                    android:text="@string/join_meeting_look_member"
+                    android:textColor="@color/carrot_primary_button"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TextSizeCheck" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/chevron_down_orange"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_join_meeting_look_member"
+                    app:layout_constraintStart_toEndOf="@id/tv_join_meeting_look_member"
+                    app:layout_constraintTop_toTopOf="@id/tv_join_meeting_look_member" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/tv_join_meeting_excercise"
@@ -108,8 +122,8 @@
                 android:text="@string/excercise"
                 android:textColor="@color/carrot_grey500"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@id/iv_join_meeting_look_member"
-                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_look_member" />
+                app:layout_constraintStart_toStartOf="@id/cl_join_meeting_look_member"
+                app:layout_constraintTop_toBottomOf="@id/cl_join_meeting_look_member" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,7 +138,7 @@
                 android:textColor="@color/carrot_grey500"
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@id/tv_join_meeting_excercise"
-                app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_look_member" />
+                app:layout_constraintTop_toBottomOf="@id/cl_join_meeting_look_member" />
 
             <TextView
                 android:id="@+id/tv_join_meeting_content"
@@ -143,10 +157,11 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tl_join_meeting_tab"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="19dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_content"
+                app:tabIndicator="@drawable/shape_black_fill_rec"
                 app:tabIndicatorColor="@color/carrot_grey500"
                 app:tabIndicatorFullWidth="true"
                 app:tabIndicatorHeight="1.5dp"
@@ -191,10 +206,12 @@
             <ImageView
                 android:id="@+id/iv_join_meeting_image1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="2dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_image2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_album4" />
@@ -202,9 +219,11 @@
             <ImageView
                 android:id="@+id/iv_join_meeting_image2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginEnd="2dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_image3"
                 app:layout_constraintStart_toEndOf="@id/iv_join_meeting_image1"
                 app:layout_constraintTop_toTopOf="@id/iv_join_meeting_image1" />
@@ -212,8 +231,10 @@
             <ImageView
                 android:id="@+id/iv_join_meeting_image3"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_join_meeting_image2"
                 app:layout_constraintTop_toTopOf="@id/iv_join_meeting_image1" />
@@ -221,10 +242,12 @@
             <ImageView
                 android:id="@+id/iv_join_meeting_image4"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="2dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_image5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_image1" />
@@ -232,9 +255,11 @@
             <ImageView
                 android:id="@+id/iv_join_meeting_image5"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginEnd="2dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_image6"
                 app:layout_constraintStart_toEndOf="@id/iv_join_meeting_image4"
                 app:layout_constraintTop_toTopOf="@id/iv_join_meeting_image4" />
@@ -242,8 +267,10 @@
             <ImageView
                 android:id="@+id/iv_join_meeting_image6"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
+                app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_join_meeting_image5"
                 app:layout_constraintTop_toTopOf="@id/iv_join_meeting_image4" />
@@ -272,11 +299,12 @@
                 app:layout_constraintTop_toBottomOf="@id/view_join_meeting_rectangle1" />
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cv_join_meeting_date"
-                android:layout_width="38dp"
-                android:layout_height="47dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="27dp"
+                android:layout_marginBottom="34dp"
                 android:outlineProvider="none"
                 app:cardBackgroundColor="@color/carrot_grey100"
                 app:cardCornerRadius="6dp"
@@ -284,8 +312,10 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_64">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingHorizontal="8dp">
 
                     <TextView
                         android:id="@+id/tv_join_meeting_november"
@@ -312,9 +342,10 @@
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_november" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
             <ImageView
                 android:id="@+id/iv_join_meeting_alert_icon"
@@ -391,7 +422,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_join_meeting_look_everything_button"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="12dp"
                 android:outlineProvider="none"
@@ -402,6 +433,7 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_join_meeting_clock_icon">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_join_meeting_look_everything"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -409,6 +441,7 @@
                         android:id="@+id/tv_join_meeting_look_everything"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="12dp"
                         android:layout_marginEnd="3dp"
                         android:fontFamily="@font/apple_sd_gothic_neo_b"
                         android:text="@string/look_everything"
@@ -505,7 +538,7 @@
                     app:layout_constraintTop_toTopOf="@id/tv_join_meeting_look_everything2" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_join_meeting"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
