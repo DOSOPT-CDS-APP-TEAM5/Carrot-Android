@@ -3,4 +3,9 @@
     <style name="Carrot.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/apple_sd_gothic_neo_r</item>
     </style>
+
+    <style name="tab_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/apple_sd_gothic_neo_b</item>
+    </style>
 </resources>
