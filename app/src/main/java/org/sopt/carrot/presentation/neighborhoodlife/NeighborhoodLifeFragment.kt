@@ -22,6 +22,10 @@ class NeighborhoodLifeFragment :
 
         initCarouselTextDummyAdapter()
         initCarouselTagDummyAdapter()
+        setOnClickProfile()
+    }
+
+    private fun setOnClickProfile() {
         binding.ivProfile.setOnClickListener {
             startActivity(Intent(requireContext(), ProfileActivity::class.java))
         }
