@@ -498,6 +498,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/tv_join_meeting_notice"
                 app:layout_constraintTop_toBottomOf="@id/tv_join_meeting_notice"
+                tools:itemCount="5"
                 tools:listitem="@layout/item_join_meeting" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
