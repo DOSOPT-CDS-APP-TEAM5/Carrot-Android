@@ -64,7 +64,7 @@ class NeighborhoodLifeFragment :
     private fun observeData() {
         neighborhoodViewModel.livesList.observe(viewLifecycleOwner) {
             if (it.isEmpty()) {
-                snackBar(binding.root) { "빈 동네 생활 리스트 입니다." }
+                snackBar(binding.root) { getString(R.string.empty_list) }
                 return@observe
             }
             neighborhoodLifeAdapter.submitList(it)

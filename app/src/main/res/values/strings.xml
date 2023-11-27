@@ -10,6 +10,7 @@
     <!-- 동네 생활 string resources -->
     <string name="sample_neighborhood_name">동천동</string>
     <string name="explore_meeting">모임 더 둘러보기</string>
+    <string name="empty_list">빈 리스트 입니다.</string>
 
     <!-- 프로필 -->
     <string name="profile_title">먼저 모임 프로필을\n만들어주세요</string>
