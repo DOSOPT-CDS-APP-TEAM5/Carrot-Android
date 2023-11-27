@@ -1,5 +1,6 @@
 package org.sopt.carrot.presentation.neighborhoodlife
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTagAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTextAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.dummy.carouselTagList
 import org.sopt.carrot.presentation.neighborhoodlife.dummy.carouselTextList
+import org.sopt.carrot.presentation.profile.ProfileActivity
 
 class NeighborhoodLifeFragment :
     BindingFragment<FragmentNeighborhoodLifeBinding>(R.layout.fragment_neighborhood_life) {
@@ -20,6 +22,9 @@ class NeighborhoodLifeFragment :
 
         initCarouselTextDummyAdapter()
         initCarouselTagDummyAdapter()
+        binding.ivProfile.setOnClickListener {
+            startActivity(Intent(requireContext(), ProfileActivity::class.java))
+        }
     }
 
     private fun initCarouselTextDummyAdapter() {
