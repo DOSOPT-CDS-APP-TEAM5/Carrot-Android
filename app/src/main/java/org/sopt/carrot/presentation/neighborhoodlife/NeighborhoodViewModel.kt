@@ -14,7 +14,7 @@ class NeighborhoodViewModel(
     private val _livesList = MutableLiveData<List<LivesDataResponse>>()
     val livesList: LiveData<List<LivesDataResponse>> get() = _livesList
 
-    fun getLives(category: String) {
+    fun getLives(category: String = "") {
         viewModelScope.launch {
             kotlin.runCatching {
                 neighborhoodLifeRepository.getLives(category)
