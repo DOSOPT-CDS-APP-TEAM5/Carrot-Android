@@ -260,16 +260,20 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintDimensionRatio="1:1.1"
-                app:layout_constraintEnd_toStartOf="@id/iv_join_meeting_image6"
+                app:layout_constraintEnd_toStartOf="@id/tv_join_meeting_image6"
                 app:layout_constraintStart_toEndOf="@id/iv_join_meeting_image4"
                 app:layout_constraintTop_toTopOf="@id/iv_join_meeting_image4" />
 
-            <ImageView
-                android:id="@+id/iv_join_meeting_image6"
+            <TextView
+                android:id="@+id/tv_join_meeting_image6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background"
+                android:background="@color/carrot_grey100"
+                android:fontFamily="@font/apple_sd_gothic_neo_m"
+                android:gravity="center"
+                android:text="@string/join_meeting_look_more"
+                android:textColor="@color/carrot_grey300"
+                android:textSize="15sp"
                 app:layout_constraintDimensionRatio="1:1.1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_join_meeting_image5"
