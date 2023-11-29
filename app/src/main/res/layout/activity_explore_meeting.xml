@@ -1,226 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="33dp"
+        android:orientation="vertical">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/ns_main"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="15dp"
-            tools:context=".presentation.exploremeeting.ExploreMeetingActivity">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_explore_meeting_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="9dp"
-                android:text="동천동 모임"
-                android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginStart="48dp"
-                android:padding="6dp"
-                android:src="@drawable/ic_profile_explore"
-                app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
-                app:layout_constraintEnd_toStartOf="@+id/iv_alarm"
-                app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
-
-            <ImageView
-                android:id="@+id/iv_alarm"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:padding="6dp"
-                android:src="@drawable/ic_alarm_explore"
-                app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etv_home_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@color/carrot_grey100"
-                android:drawableStart="@drawable/ic_search_explore"
-                android:drawablePadding="9dp"
-                android:hint="우리 동네 모임을 검색해보세요."
-                android:imeOptions="actionDone"
-                android:inputType="text"
-                android:minHeight="48dp"
-                android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleMd"
-                android:textColor="@color/carrot_grey300"
-                app:layout_constraintTop_toBottomOf="@id/tv_explore_meeting_title" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tl_explore_meeting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etv_home_search"
-                app:tabIndicatorColor="@color/carrot_black"
-                app:tabIndicatorFullWidth="true"
-                app:tabIndicatorHeight="2dp"
-                app:tabTextAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
-                app:tabTextColor="@color/selector_tablayout_text">
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="전체모임" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="나의 모임 일" />
-
-            </com.google.android.material.tabs.TabLayout>
-
-            <TextView
-                android:id="@+id/tv_neighbor_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingVertical="15dp"
-                android:text="우리동네 모임"
-                android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tl_explore_meeting" />
-
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tl_neighbor_meeting"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_marginTop="1dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_neighbor_title"
-                app:tabIndicatorColor="@color/carrot_black"
-                app:tabIndicatorFullWidth="true"
-                app:tabIndicatorHeight="2dp"
-                app:tabMode="scrollable"
-                app:tabTextAppearance="@style/TextAppearance.AppleSDGothic.Subtitle"
-                app:tabTextColor="@color/selector_tablayout_text" />
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewpager_meeting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintTop_toBottomOf="@id/tl_neighbor_meeting" />
-
-            <TextView
-                android:id="@+id/tv_new_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="새로 생겼어요"
-                android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
-                android:textColor="@color/carrot_black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewpager_meeting" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_new_meeting_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingVertical="4dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_new_title" />
-
-            <TextView
-                android:id="@+id/tv_meeting_all_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/carrot_grey100"
-                android:gravity="center"
-                android:paddingHorizontal="129dp"
-                android:paddingVertical="12dp"
-                android:text="전체보기"
-                android:textAppearance="@style/TextAppearance.AppleSDGothic.Subtitle"
-                android:textColor="@color/carrot_black"
-                app:layout_constraintTop_toBottomOf="@id/rv_new_meeting_list" />
-
-            <TextView
-                android:id="@+id/tv_meeting_highlight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="모임 둘러보기"
-                android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
-                android:textColor="@color/carrot_black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_meeting_all_view" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_meeting_highlight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="4dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_meeting_highlight" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="37dp"
-                android:background="@color/carrot_grey100"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_meeting_highlight">
+                android:layout_height="match_parent"
+                android:paddingHorizontal="15dp"
+                android:paddingBottom="39dp"
+                tools:context=".presentation.exploremeeting.ExploreMeetingActivity">
 
                 <TextView
+                    android:id="@+id/tv_explore_meeting_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:paddingVertical="10dp"
-                    android:text="원하는 모임이 없나요?"
-                    android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyNumber"
-                    android:textColor="@color/carrot_black"
+                    android:layout_marginTop="14dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="9dp"
+                    android:text="동천동 모임"
+                    android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <ImageView
+                    android:id="@+id/iv_profile"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="13dp"
-                    android:layout_marginEnd="13dp"
-                    android:paddingVertical="10dp"
-                    android:text="먼 동네의 모임 보기"
-                    android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyUnder"
-                    android:textColor="@color/carrot_black"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="48dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_profile_explore"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_alarm"
+                    app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
+
+                <ImageView
+                    android:id="@+id/iv_alarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_alarm_explore"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etv_home_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/carrot_grey100"
+                    android:drawableStart="@drawable/ic_search_explore"
+                    android:drawablePadding="9dp"
+                    android:hint="우리 동네 모임을 검색해보세요."
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleMd"
+                    android:textColor="@color/carrot_grey300"
+                    app:layout_constraintTop_toBottomOf="@id/tv_explore_meeting_title" />
 
-                    <Button
-                        android:id="@+id/btn_sample"
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_explore_meeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etv_home_search"
+                    app:tabIndicatorColor="@color/carrot_black"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabTextAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+                    app:tabTextColor="@color/selector_tablayout_text">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="전체모임" />
+
+                    <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="모임"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:text="나의 모임 일" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.tabs.TabLayout>
 
-    </androidx.core.widget.NestedScrollView>
+                <TextView
+                    android:id="@+id/tv_neighbor_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="15dp"
+                    android:text="우리동네 모임"
+                    android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tl_explore_meeting" />
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_neighbor_meeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_neighbor_title"
+                    app:tabIndicatorColor="@color/carrot_black"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabIndicatorHeight="2dp"
+                    app:tabMode="scrollable"
+                    app:tabTextAppearance="@style/TextAppearance.AppleSDGothic.Subtitle"
+                    app:tabTextColor="@color/selector_tablayout_text" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager_meeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/tl_neighbor_meeting" />
+
+                <TextView
+                    android:id="@+id/tv_new_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="새로 생겼어요"
+                    android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+                    android:textColor="@color/carrot_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewpager_meeting" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_new_meeting_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_new_title" />
+
+                <TextView
+                    android:id="@+id/tv_meeting_all_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/carrot_grey100"
+                    android:gravity="center"
+                    android:paddingHorizontal="129dp"
+                    android:paddingVertical="12dp"
+                    android:text="전체보기"
+                    android:textAppearance="@style/TextAppearance.AppleSDGothic.Subtitle"
+                    android:textColor="@color/carrot_black"
+                    app:layout_constraintTop_toBottomOf="@id/rv_new_meeting_list" />
+
+                <TextView
+                    android:id="@+id/tv_meeting_highlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="모임 둘러보기"
+                    android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
+                    android:textColor="@color/carrot_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_meeting_all_view" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_meeting_highlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_meeting_highlight" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="37dp"
+                    android:background="@color/carrot_grey100"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_meeting_highlight">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:paddingVertical="10dp"
+                        android:text="원하는 모임이 없나요?"
+                        android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyNumber"
+                        android:textColor="@color/carrot_black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_long_village"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:paddingVertical="10dp"
+                        android:text="먼 동네의 모임 보기"
+                        android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyUnder"
+                        android:textColor="@color/carrot_grey500"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btnSample"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/carrot_primary_button"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:text="글쓰기"
+            android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleMd"
+            android:textColor="@color/carrot_white"
+            app:elevation="0dp"
+            app:icon="@drawable/ic_create"
+            app:iconPadding="3dp"
+            app:iconTint="@color/carrot_white"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.ExtendedFab" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
