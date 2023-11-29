@@ -2,6 +2,9 @@ package org.sopt.carrot
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
+import org.sopt.carrot.data.api.RetrofitServicePool
+import org.sopt.carrot.data.datasource.remote.NeighborhoodLifeRemoteDatasource
+import org.sopt.carrot.data.repo.NeighborhoodLifeRepository
 import timber.log.Timber
 
 class CarrotApp : Application() {
@@ -17,4 +20,21 @@ class CarrotApp : Application() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
+    companion object {
+        private lateinit var neighborhoodLifeRepository: NeighborhoodLifeRepository
+
+        @Synchronized
+        fun getNeighborhoodLifeRepositoryInstance(): NeighborhoodLifeRepository {
+            if (!::neighborhoodLifeRepository.isInitialized) {
+                try {
+                    neighborhoodLifeRepository = NeighborhoodLifeRepository(
+                        NeighborhoodLifeRemoteDatasource(RetrofitServicePool.carrotService)
+                    )
+                } catch (e: ExceptionInInitializerError) {
+                    e.printStackTrace()
+                }
+            }
+            return neighborhoodLifeRepository
+        }
+    }
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginVertical="18dp">
+
+    <TextView
+        android:id="@+id/tv_neighborhood_contents_topic"
+        style="@style/TextAppearance.AppleSDGothic.Tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/carrot_grey100"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="3dp"
+        android:textColor="@color/carrot_grey500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="동네 사건사고" />
+
+    <TextView
+        android:id="@+id/tv_neighborhood_contents_title"
+        style="@style/TextAppearance.AppleSDGothic.TitleMd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/carrot_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_neighborhood_contents_topic"
+        tools:text="강아지 잃어버리신 분 있나요?" />
+
+    <TextView
+        android:id="@+id/tv_neighborhood_contents_description"
+        style="@style/TextAppearance.AppleSDGothic.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/carrot_grey400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_neighborhood_contents_title"
+        tools:text="하얀색 말티즈 강아지 은행 앞에서 발견했어요." />
+
+    <TextView
+        android:id="@+id/tv_neighborhood_contents_etc"
+        style="@style/TextAppearance.AppleSDGothic.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/carrot_grey400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_neighborhood_contents_description"
+        tools:text="동천동 · 1분 전 · 조회 22" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_like"
+        style="@style/TextAppearance.AppleSDGothic.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:drawableStart="@drawable/ic_liked"
+        android:drawablePadding="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_comment"
+        app:layout_constraintEnd_toStartOf="@id/tv_comment"
+        app:layout_constraintTop_toTopOf="@id/tv_comment"
+        tools:text="1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_comment"
+        style="@style/TextAppearance.AppleSDGothic.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_comment"
+        android:drawablePadding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
