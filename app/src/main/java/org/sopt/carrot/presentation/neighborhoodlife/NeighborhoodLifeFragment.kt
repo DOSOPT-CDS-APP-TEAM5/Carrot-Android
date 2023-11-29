@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
+import org.sopt.carrot.CarrotApp
 import org.sopt.carrot.R
 import org.sopt.carrot.core.ui.base.BindingFragment
 import org.sopt.carrot.core.ui.fragment.snackBar
@@ -18,7 +20,7 @@ import org.sopt.carrot.presentation.profile.ProfileActivity
 
 class NeighborhoodLifeFragment :
     BindingFragment<FragmentNeighborhoodLifeBinding>(R.layout.fragment_neighborhood_life) {
-    private val neighborhoodViewModel: NeighborhoodViewModel by activityViewModels()
+    private lateinit var neighborhoodViewModel: NeighborhoodViewModel
 
     private lateinit var neighborhoodLifeAdapter: NeighborhoodLifeAdapter
     private lateinit var carouselTextAdapter: CarouselTextAdapter
@@ -26,12 +28,19 @@ class NeighborhoodLifeFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initNeighborhoodLifeViewModel()
         initCarouselTextDummyAdapter()
         initCarouselTagDummyAdapter()
         initNeighborhoodLifeAdapter()
         initLives()
         setOnClickProfile()
         observeData()
+    }
+
+    private fun initNeighborhoodLifeViewModel() {
+        neighborhoodViewModel = NeighborhoodLifeViewModelProvider(
+            CarrotApp.getNeighborhoodLifeRepositoryInstance()
+        ).create(NeighborhoodViewModel::class.java)
     }
 
     private fun initLives() {
@@ -59,6 +68,7 @@ class NeighborhoodLifeFragment :
     private fun initNeighborhoodLifeAdapter() {
         neighborhoodLifeAdapter = NeighborhoodLifeAdapter()
         binding.rcvContents.adapter = neighborhoodLifeAdapter
+        binding.rcvContents.addItemDecoration(DividerItemDecoration(requireContext(), VERTICAL))
     }
 
     private fun observeData() {

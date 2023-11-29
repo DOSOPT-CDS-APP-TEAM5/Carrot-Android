@@ -1,14 +1,19 @@
 package org.sopt.carrot.data.datasource.remote
 
-import org.sopt.carrot.data.api.NeighborhoodLifeService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.withContext
+import org.sopt.carrot.data.api.CarrotService
 import org.sopt.carrot.data.model.neighborhoodlife.LivesDataResponse
-import org.sopt.carrot.data.model.neighborhoodlife.LivesResponse
-import retrofit2.Response
 
 class NeighborhoodLifeRemoteDatasource(
-    private val neighborhoodLifeService: NeighborhoodLifeService
+    private val carrotService: CarrotService
 ) {
-    suspend fun getLives(category: String): List<LivesDataResponse> {
-        return neighborhoodLifeService.getLives(category).data
+    suspend fun getLives(): List<LivesDataResponse> {
+        return withContext(Dispatchers.IO) {
+            async {
+                carrotService.getLives().data
+            }.await()
+        }
     }
 }
