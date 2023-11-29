@@ -6,4 +6,21 @@
     <string name="nearby">내 근처</string>
     <string name="chatting">채팅</string>
     <string name="my_carrot">나의 당근</string>
+
+    <!-- 동네 생활 string resources -->
+    <string name="sample_neighborhood_name">동천동</string>
+    <string name="explore_meeting">모임 더 둘러보기</string>
+    <string name="empty_list">빈 리스트 입니다.</string>
+
+    <!-- 프로필 -->
+    <string name="profile_title">먼저 모임 프로필을\n만들어주세요</string>
+    <string name="profile_sub_title">모든 모임에서 동일하게 사용하는 프로필이에요.</string>
+    <string name="nickname">닉네임</string>
+    <string name="input_nickname">닉네임을 입력해주세요.</string>
+    <string name="self_introduce">자기소개</string>
+    <string name="input_self_introduce">자기소개를 입력해주세요.</string>
+    <string name="join">가입하기</string>
+    <string name="join_meeting">모임 가입하기</string>
+    <string name="text_length12">%s/12</string>
+    <string name="text_length200">%s/200</string>
 </resources>

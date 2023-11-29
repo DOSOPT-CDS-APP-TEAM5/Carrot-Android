@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_enabled="false"
+        android:drawable="@drawable/shape_grey200_radius_6_rect"/>
+    <item
+        android:state_enabled="true"
+        android:drawable="@drawable/shape_primary_button_radius_6_rect"/>
+</selector>

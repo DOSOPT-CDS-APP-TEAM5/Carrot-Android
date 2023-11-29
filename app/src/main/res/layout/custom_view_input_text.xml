@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextAppearance.AppleSDGothic.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/carrot_black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_margin="10dp"
+            tools:text="@string/self_introduce" />
+
+        <EditText
+            android:id="@+id/et_content"
+            style="@style/TextAppearance.AppleSDGothic.Info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_stroke_grey400_radius_6_rect"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="14dp"
+            android:textColor="@color/carrot_black"
+            android:textColorHint="@color/carrot_grey400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:hint="@string/input_self_introduce"
+            tools:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/TextAppearance.SfPro.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/carrot_grey400"
+            app:layout_constraintEnd_toEndOf="@id/et_content"
+            app:layout_constraintTop_toBottomOf="@+id/et_content"
+            tools:text="0/150" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

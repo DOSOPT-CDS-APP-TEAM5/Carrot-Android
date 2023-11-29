@@ -85,4 +85,16 @@
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">14sp</item>
     </style>
+
+    <style name="TextAppearance.SfPro.Body" parent="TextAppearance.AppleSDGothic">
+        <item name="fontFamily">@font/sf_pro</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">19sp</item>
+    </style>
+
+    <style name="TextAppearance.SfPro.Info" parent="TextAppearance.AppleSDGothic">
+        <item name="fontFamily">@font/sf_pro</item>
+        <item name="android:textSize">11sp</item>
+        <item name="lineHeight">18sp</item>
+    </style>
 </resources>
