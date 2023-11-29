@@ -28,7 +28,6 @@ class ScreenMeetingSlideFragment :
         when (data) {
             "전체" ->
                 viewModel.getClubs()
-
             "가족육아" ->
                 viewModel.getClubs()
             // 가족육아는 데이터가 없어서 그냥 아무데이터나 넣음 ㅋㅋ
