@@ -1,5 +1,6 @@
 package org.sopt.carrot.presentation.exploremeeting
 
+import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -11,6 +12,7 @@ import org.sopt.carrot.databinding.ActivityExploreMeetingBinding
 import org.sopt.carrot.presentation.ViewModelFactory
 import org.sopt.carrot.presentation.exploremeeting.adapter.HighlightAdapter
 import org.sopt.carrot.presentation.exploremeeting.adapter.NewMeetingAdapter
+import org.sopt.carrot.presentation.profile.ProfileActivity
 
 class ExploreMeetingActivity :
     BindingActivity<ActivityExploreMeetingBinding>(R.layout.activity_explore_meeting) {
@@ -29,6 +31,7 @@ class ExploreMeetingActivity :
         initTabAdapterSet()
         initTabLayoutItem()
         initMockAdapter()
+        setOnClickProfile()
     }
 
     private fun initView() {
@@ -64,4 +67,11 @@ class ExploreMeetingActivity :
         newMeetingAdapter.submitList(viewModel.newMeetingMockList)
         highlightAdapter.submitList(viewModel.meetingHighlightMockList)
     }
+
+    private fun setOnClickProfile() {
+        binding.ivProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+    }
+
 }

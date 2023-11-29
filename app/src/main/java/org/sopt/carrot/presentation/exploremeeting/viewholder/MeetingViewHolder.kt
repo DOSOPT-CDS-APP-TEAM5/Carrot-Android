@@ -10,6 +10,7 @@ class MeetingViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(data: Meeting) {
         binding.meeting = data
+        binding.tvMeetingListCount.text = data.participantsCount.toString()+"명 · "
         binding.root.setOnClickListener {
             navigate(data)
         }
