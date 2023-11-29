@@ -62,9 +62,5 @@
 ## Branch Convention
 - https://bitter-latency-758.notion.site/Branch-Convention-2-50c01fe585f54fa088e6c7591e525023
 
-## Commit Message
+## Github Convention
 -https://bitter-latency-758.notion.site/Github-Convention-2-5ab5bb9341574ba78d685d61539fb14d
-
-
-<img width="781" alt="view_convention" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/ffad81fa-cf38-4ddc-b436-9eb52d195a28">
-<img width="755" alt="xml_drawable_convention" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Android/assets/52442547/78cf47e2-1158-47ab-921e-9bc485d19525">
