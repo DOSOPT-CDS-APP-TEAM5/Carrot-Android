@@ -42,7 +42,6 @@
     <string name="self_introduce">자기소개</string>
     <string name="input_self_introduce">자기소개를 입력해주세요.</string>
     <string name="join">가입하기</string>
-    <string name="join_meeting">모임 가입하기</string>
     <string name="text_length12">%s/12</string>
     <string name="text_length200">%s/200</string>
 </resources>
