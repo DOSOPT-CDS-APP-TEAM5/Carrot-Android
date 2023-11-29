@@ -33,7 +33,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="48dp"
                 android:padding="6dp"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/ic_profile_explore"
                 app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
                 app:layout_constraintEnd_toStartOf="@+id/iv_alarm"
                 app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:padding="6dp"
-                android:src="@drawable/ic_alarm"
+                android:src="@drawable/ic_alarm_explore"
                 app:layout_constraintBottom_toBottomOf="@id/tv_explore_meeting_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_explore_meeting_title" />
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/carrot_grey100"
-                android:drawableStart="@drawable/ic_search"
+                android:drawableStart="@drawable/ic_search_explore"
                 android:drawablePadding="9dp"
                 android:hint="우리 동네 모임을 검색해보세요."
                 android:imeOptions="actionDone"
