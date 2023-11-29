@@ -1,11 +1,55 @@
 package org.sopt.carrot.presentation.exploremeeting
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
-import org.sopt.carrot.presentation.model.Meeting
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import org.sopt.carrot.core.ui.view.UiState
+import org.sopt.carrot.data.model.Meeting
+import org.sopt.carrot.data.repo.ExploreMeetingRepository
 import org.sopt.carrot.presentation.model.MeetingHighlight
 import org.sopt.carrot.presentation.model.NewMeeting
 
-class ExploreMeetingViewModel : ViewModel() {
+class ExploreMeetingViewModel(
+    private val exploreMeetingRepo: ExploreMeetingRepository
+) : ViewModel() {
+    private val _meetingList = MutableStateFlow<UiState<List<Meeting>?>>(UiState.Empty)
+    val meetingList: StateFlow<UiState<List<Meeting>?>> = _meetingList
+
+    fun getClubs() {
+        Log.d("http", "http")
+        viewModelScope.launch {
+            _meetingList.value = UiState.Loading
+            runCatching {
+                exploreMeetingRepo.getClubs()
+            }.onSuccess {
+                Log.d("success", "${it.data}")
+                _meetingList.value = UiState.Success(it.data)
+            }.onFailure {
+                Log.d("fail", "${it}")
+                _meetingList.value = UiState.Failure(it.message.toString())
+            }
+        }
+    }
+
+    fun getTagClubs(category: String) {
+        Log.d("http", "http")
+        viewModelScope.launch {
+            _meetingList.value = UiState.Loading
+            runCatching {
+                exploreMeetingRepo.getTagClubs(category)
+            }.onSuccess {
+                Log.d("success", "${it.data}")
+                _meetingList.value = UiState.Success(it.data)
+            }.onFailure {
+                Log.d("fail", "${it}")
+                _meetingList.value = UiState.Failure(it.message.toString())
+            }
+        }
+    }
+
     val meetingMockList = mutableListOf(
         Meeting(
             1,
