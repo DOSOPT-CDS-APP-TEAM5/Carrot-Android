@@ -11,6 +11,7 @@ import org.sopt.carrot.R
 import org.sopt.carrot.core.ui.base.BindingFragment
 import org.sopt.carrot.core.ui.fragment.snackBar
 import org.sopt.carrot.databinding.FragmentNeighborhoodLifeBinding
+import org.sopt.carrot.presentation.exploremeeting.ExploreMeetingActivity
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTagAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTextAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.NeighborhoodLifeAdapter
@@ -34,6 +35,7 @@ class NeighborhoodLifeFragment :
         initNeighborhoodLifeAdapter()
         initLives()
         setOnClickProfile()
+        setOnExploreMeeting()
         observeData()
     }
 
@@ -41,16 +43,6 @@ class NeighborhoodLifeFragment :
         neighborhoodViewModel = NeighborhoodLifeViewModelProvider(
             CarrotApp.getNeighborhoodLifeRepositoryInstance()
         ).create(NeighborhoodViewModel::class.java)
-    }
-
-    private fun initLives() {
-        neighborhoodViewModel.getLives()
-    }
-
-    private fun setOnClickProfile() {
-        binding.ivProfile.setOnClickListener {
-            startActivity(Intent(requireContext(), ProfileActivity::class.java))
-        }
     }
 
     private fun initCarouselTextDummyAdapter() {
@@ -69,6 +61,22 @@ class NeighborhoodLifeFragment :
         neighborhoodLifeAdapter = NeighborhoodLifeAdapter()
         binding.rcvContents.adapter = neighborhoodLifeAdapter
         binding.rcvContents.addItemDecoration(DividerItemDecoration(requireContext(), VERTICAL))
+    }
+
+    private fun initLives() {
+        neighborhoodViewModel.getLives()
+    }
+
+    private fun setOnClickProfile() {
+        binding.ivProfile.setOnClickListener {
+            startActivity(Intent(requireContext(), ProfileActivity::class.java))
+        }
+    }
+
+    private fun setOnExploreMeeting() {
+        binding.linearLayoutMoreExploreMeeting.setOnClickListener {
+            startActivity(Intent(requireContext(), ExploreMeetingActivity::class.java))
+        }
     }
 
     private fun observeData() {
