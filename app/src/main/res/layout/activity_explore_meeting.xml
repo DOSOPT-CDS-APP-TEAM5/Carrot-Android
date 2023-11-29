@@ -34,7 +34,7 @@
                     android:layout_marginTop="14dp"
                     android:paddingHorizontal="10dp"
                     android:paddingVertical="9dp"
-                    android:text="동천동 모임"
+                    android:text="@string/tv_explore_meeting_title"
                     android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
                     android:background="@color/carrot_grey100"
                     android:drawableStart="@drawable/ic_search_explore"
                     android:drawablePadding="9dp"
-                    android:hint="우리 동네 모임을 검색해보세요."
+                    android:hint="@string/etv_hint_search"
                     android:imeOptions="actionDone"
                     android:inputType="text"
                     android:minHeight="48dp"
@@ -95,12 +95,12 @@
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="전체모임" />
+                        android:text="@string/tv_tab_title1" />
 
                     <com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="나의 모임 일" />
+                        android:text="@string/tv_tab_title2" />
 
                 </com.google.android.material.tabs.TabLayout>
 
@@ -109,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingVertical="15dp"
-                    android:text="우리동네 모임"
+                    android:text="@string/tv_neighbor_title"
                     android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tl_explore_meeting" />
@@ -142,7 +142,7 @@
                     android:id="@+id/tv_new_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="새로 생겼어요"
+                    android:text="@string/tv_new"
                     android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
                     android:textColor="@color/carrot_black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -166,7 +166,7 @@
                     android:gravity="center"
                     android:paddingHorizontal="129dp"
                     android:paddingVertical="12dp"
-                    android:text="전체보기"
+                    android:text="@string/tv_all_view"
                     android:textAppearance="@style/TextAppearance.AppleSDGothic.Subtitle"
                     android:textColor="@color/carrot_black"
                     app:layout_constraintTop_toBottomOf="@id/rv_new_meeting_list" />
@@ -175,7 +175,7 @@
                     android:id="@+id/tv_meeting_highlight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="모임 둘러보기"
+                    android:text="@string/tv_exlplore_meeting"
                     android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleBd"
                     android:textColor="@color/carrot_black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -206,7 +206,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="13dp"
                         android:paddingVertical="10dp"
-                        android:text="원하는 모임이 없나요?"
+                        android:text="@string/tv_want_meeting"
                         android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyNumber"
                         android:textColor="@color/carrot_black"
                         app:layout_constraintStart_toStartOf="parent"
@@ -219,7 +219,7 @@
                         android:layout_marginStart="13dp"
                         android:layout_marginEnd="13dp"
                         android:paddingVertical="10dp"
-                        android:text="먼 동네의 모임 보기"
+                        android:text="@string/tv_see_long_town"
                         android:textAppearance="@style/TextAppearance.AppleSDGothic.BodyUnder"
                         android:textColor="@color/carrot_grey500"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -241,7 +241,7 @@
             android:backgroundTint="@color/carrot_primary_button"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:text="글쓰기"
+            android:text="@string/tv_write"
             android:textAppearance="@style/TextAppearance.AppleSDGothic.TitleMd"
             android:textColor="@color/carrot_white"
             app:elevation="0dp"
