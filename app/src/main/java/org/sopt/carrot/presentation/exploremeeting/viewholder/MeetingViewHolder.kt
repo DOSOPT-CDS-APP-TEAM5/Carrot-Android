@@ -1,14 +1,18 @@
 package org.sopt.carrot.presentation.exploremeeting.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
+import org.sopt.carrot.data.model.Meeting
 import org.sopt.carrot.databinding.ItemMeetingBinding
-import org.sopt.carrot.presentation.model.Meeting
 
 class MeetingViewHolder(
     private val binding: ItemMeetingBinding,
+    private val navigate: (Meeting) -> Unit = { _ -> }
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(data: Meeting) {
         binding.meeting = data
+        binding.root.setOnClickListener {
+            navigate(data)
+        }
         binding.executePendingBindings()
     }
 }
