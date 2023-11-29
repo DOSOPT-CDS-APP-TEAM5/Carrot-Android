@@ -6,6 +6,28 @@
     <string name="nearby">내 근처</string>
     <string name="chatting">채팅</string>
     <string name="my_carrot">나의 당근</string>
+    <string name="join_meeting_title">새벽배드민턴 용인수지죽전아르피아</string>
+    <string name="join_meeting_look_member">40명의 멤버 보기</string>
+    <string name="excercise">운동</string>
+    <string name="join_meeting_age">23~53세</string>
+    <string name="join_meeting_everything">전체</string>
+    <string name="join_meeting_album">앨범</string>
+    <string name="join_meeting_schedule">일정</string>
+    <string name="join_meeting_notice">게시판</string>
+    <string name="join_meeting_album4">앨범 4</string>
+    <string name="join_meeting_64">일정 64</string>
+    <string name="join_meeting_november">11월</string>
+    <string name="_8">8</string>
+    <string name="join_meeting_alert_text">모임에만 공개된 일정이에요.</string>
+    <string name="recruiting">모집중</string>
+    <string name="join_meeting_04_00">오후 04:00</string>
+    <string name="join_meeting_2_8">2/8명</string>
+    <string name="look_everything">전체보기</string>
+    <string name="join_meeting_48">게시판 48</string>
+    <string name="title">제목</string>
+    <string name="content">내용</string>
+    <string name="_0">0</string>
+    <string name="join_meeting">모임 가입하기</string>
 
     <!-- 동네 생활 string resources -->
     <string name="sample_neighborhood_name">동천동</string>
