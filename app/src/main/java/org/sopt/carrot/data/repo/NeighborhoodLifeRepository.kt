@@ -9,7 +9,5 @@ class NeighborhoodLifeRepository(
     private val neighborhoodLifeRemoteDatasource: NeighborhoodLifeRemoteDatasource
 ) {
     suspend fun getLives(): List<LivesDataResponse> =
-        withContext(Dispatchers.IO) {
-            neighborhoodLifeRemoteDatasource.getLives()
-        }
+        neighborhoodLifeRemoteDatasource.getLives()
 }

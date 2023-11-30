@@ -10,10 +10,6 @@ class NeighborhoodLifeRemoteDatasource(
     private val carrotService: CarrotService
 ) {
     suspend fun getLives(): List<LivesDataResponse> {
-        return withContext(Dispatchers.IO) {
-            async {
-                carrotService.getLives().data
-            }.await()
-        }
+        return carrotService.getLives().data
     }
 }
