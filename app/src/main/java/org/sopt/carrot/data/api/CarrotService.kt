@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface CarrotService {
     @GET("api/lives")
-    fun getLives(
+    suspend fun getLives(
         @Query("category") category: String
     ): LivesResponse
 

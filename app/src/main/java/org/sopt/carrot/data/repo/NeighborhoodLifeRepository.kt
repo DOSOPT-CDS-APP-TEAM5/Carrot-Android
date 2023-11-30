@@ -1,7 +1,5 @@
 package org.sopt.carrot.data.repo
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import org.sopt.carrot.data.datasource.remote.NeighborhoodLifeRemoteDatasource
 import org.sopt.carrot.data.model.neighborhoodlife.LivesDataResponse
 
@@ -10,4 +8,7 @@ class NeighborhoodLifeRepository(
 ) {
     suspend fun getLives(): List<LivesDataResponse> =
         neighborhoodLifeRemoteDatasource.getLives()
+
+    suspend fun getLives(category: String): List<LivesDataResponse> =
+        neighborhoodLifeRemoteDatasource.getLives(category)
 }

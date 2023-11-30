@@ -12,4 +12,7 @@ class NeighborhoodLifeRemoteDatasource(
     suspend fun getLives(): List<LivesDataResponse> {
         return carrotService.getLives().data
     }
+
+    suspend fun getLives(category: String): List<LivesDataResponse> =
+        carrotService.getLives(category).data
 }

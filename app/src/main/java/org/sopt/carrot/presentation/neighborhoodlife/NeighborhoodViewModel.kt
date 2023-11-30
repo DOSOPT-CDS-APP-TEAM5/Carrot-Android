@@ -16,10 +16,22 @@ class NeighborhoodViewModel(
 
     fun getLives() {
         viewModelScope.launch {
-            kotlin.runCatching {
+            runCatching {
                 neighborhoodLifeRepository.getLives()
             }.onSuccess {
                 _livesList.value = it
+            }.onFailure {
+                _livesList.value = emptyList()
+            }
+        }
+    }
+
+    fun getLives(category: String) {
+        viewModelScope.launch {
+            runCatching {
+                neighborhoodLifeRepository.getLives(category)
+            }.onSuccess {
+                _livesList.value = it.toList()
             }.onFailure {
                 _livesList.value = emptyList()
             }

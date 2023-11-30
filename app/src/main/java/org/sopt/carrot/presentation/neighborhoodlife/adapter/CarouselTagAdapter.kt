@@ -9,7 +9,9 @@ import org.sopt.carrot.core.ui.view.ItemDiffCallback
 import org.sopt.carrot.databinding.ItemTopicBinding
 import org.sopt.carrot.presentation.neighborhoodlife.dummy.carouselTagList
 
-class CarouselTagAdapter : ListAdapter<String, CarouselTagViewHolder>(
+class CarouselTagAdapter(
+    private val onClick: (String) -> Unit
+) : ListAdapter<String, CarouselTagViewHolder>(
     ItemDiffCallback<String>(
         onItemsTheSame = { old, new -> old == new },
         onContentsTheSame = { old, new -> old === new }
@@ -21,7 +23,8 @@ class CarouselTagAdapter : ListAdapter<String, CarouselTagViewHolder>(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ),
+            onClick = onClick
         )
     }
 
@@ -31,10 +34,16 @@ class CarouselTagAdapter : ListAdapter<String, CarouselTagViewHolder>(
 }
 
 class CarouselTagViewHolder(
-    private val binding: ItemTopicBinding
+    private val binding: ItemTopicBinding,
+    private val onClick: (String) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(item: String) {
         if (item == carouselTagList[0]) binding.ivTopic.visibility = View.VISIBLE
-        binding.tvTopicTitle.text = item
+        else {
+            binding.tvTopicTitle.text = item
+            binding.root.setOnClickListener {
+                onClick(item)
+            }
+        }
     }
 }

@@ -52,9 +52,13 @@ class NeighborhoodLifeFragment :
     }
 
     private fun initCarouselTagDummyAdapter() {
-        carouselTagAdapter = CarouselTagAdapter()
+        carouselTagAdapter = CarouselTagAdapter(::onClickTag)
         binding.rcvTopic.adapter = carouselTagAdapter
         carouselTagAdapter.submitList(carouselTagList)
+    }
+
+    private fun onClickTag(tag: String) {
+        neighborhoodViewModel.getLives(tag)
     }
 
     private fun initNeighborhoodLifeAdapter() {
