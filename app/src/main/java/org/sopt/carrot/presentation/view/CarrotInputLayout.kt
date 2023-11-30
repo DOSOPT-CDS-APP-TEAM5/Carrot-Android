@@ -52,6 +52,9 @@ class CarrotInputLayout @JvmOverloads constructor(
         }
     }
 
+    fun getEditText(): String =
+        binding.etContent.text.toString()
+
 
     fun setCountText(countText: String) {
         binding.tvCount.text = countText

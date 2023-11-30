@@ -4,19 +4,32 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.core.content.ContextCompat
+import org.sopt.carrot.CarrotApp
 import org.sopt.carrot.R
 import org.sopt.carrot.core.ui.base.BindingActivity
+import org.sopt.carrot.core.ui.context.snackBar
 import org.sopt.carrot.databinding.ActivityProfileBinding
 
 class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activity_profile) {
     private var nicknameCountTextFlag = true
     private var selfIntroduceCountTextFlag = true
 
+    private lateinit var profileViewModel: ProfileViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initProfileViewModel()
         initCarrotInputLayoutNickname()
         initCarrotInputLayoutSelfIntroduce()
+        setOnClickJoinMeeting()
+        observeData()
+    }
+
+    private fun initProfileViewModel() {
+        profileViewModel = ProfileViewModelProvider(
+            CarrotApp.getProfileRepositoryInstance()
+        ).create(ProfileViewModel::class.java)
     }
 
     private fun initCarrotInputLayoutNickname() {
@@ -74,6 +87,25 @@ class ProfileActivity : BindingActivity<ActivityProfileBinding>(R.layout.activit
         binding.btnJoinMeeting.let {
             it.isEnabled = enabled
             it.setTextColor(ContextCompat.getColor(this, buttonTextColor))
+        }
+    }
+
+    private fun setOnClickJoinMeeting() {
+        binding.btnJoinMeeting.setOnClickListener {
+            profileViewModel.postProfile(
+                nickname = binding.carrotInputLayoutNickname.getEditText(),
+                information = binding.carrotInputLayoutSelfIntroduce.getEditText()
+            ) {
+                snackBar(binding.root) { it }
+            }
+        }
+    }
+
+    private fun observeData() {
+        profileViewModel.responseSuccess.observe(this) {
+            snackBar(binding.root) {
+                it.message
+            }
         }
     }
 }
