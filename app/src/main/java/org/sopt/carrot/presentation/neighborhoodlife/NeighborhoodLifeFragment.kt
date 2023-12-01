@@ -3,9 +3,8 @@ package org.sopt.carrot.presentation.neighborhoodlife
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import org.sopt.carrot.CarrotApp
 import org.sopt.carrot.R
 import org.sopt.carrot.core.ui.base.BindingFragment
@@ -15,6 +14,7 @@ import org.sopt.carrot.presentation.exploremeeting.ExploreMeetingActivity
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTagAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.CarouselTextAdapter
 import org.sopt.carrot.presentation.neighborhoodlife.adapter.NeighborhoodLifeAdapter
+import org.sopt.carrot.presentation.neighborhoodlife.adapter.NeighborhoodLifeDivider
 import org.sopt.carrot.presentation.neighborhoodlife.dummy.carouselTagList
 import org.sopt.carrot.presentation.neighborhoodlife.dummy.carouselTextList
 import org.sopt.carrot.presentation.profile.ProfileActivity
@@ -52,15 +52,24 @@ class NeighborhoodLifeFragment :
     }
 
     private fun initCarouselTagDummyAdapter() {
-        carouselTagAdapter = CarouselTagAdapter()
+        carouselTagAdapter = CarouselTagAdapter(::onClickTag)
         binding.rcvTopic.adapter = carouselTagAdapter
         carouselTagAdapter.submitList(carouselTagList)
+    }
+
+    private fun onClickTag(tag: String) {
+        neighborhoodViewModel.getLives(tag)
     }
 
     private fun initNeighborhoodLifeAdapter() {
         neighborhoodLifeAdapter = NeighborhoodLifeAdapter()
         binding.rcvContents.adapter = neighborhoodLifeAdapter
-        binding.rcvContents.addItemDecoration(DividerItemDecoration(requireContext(), VERTICAL))
+        binding.rcvContents.addItemDecoration(
+            NeighborhoodLifeDivider(
+                1f,
+                ContextCompat.getColor(requireContext(), R.color.carrot_grey100)
+            )
+        )
     }
 
     private fun initLives() {
