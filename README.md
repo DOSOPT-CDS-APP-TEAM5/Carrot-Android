@@ -1,5 +1,5 @@
 # Android
-# NaverPay-Android
+# Carrot-Android
 
 <table>
   <tbody>
