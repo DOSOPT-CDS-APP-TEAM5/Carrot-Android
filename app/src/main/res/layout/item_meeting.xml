@@ -6,7 +6,7 @@
     <data>
             <variable
                 name="meeting"
-                type="org.sopt.carrot.presentation.model.Meeting" />
+                type="org.sopt.carrot.data.model.Meeting" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,6 +52,7 @@
             android:id="@+id/tv_meeting_list_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
             android:text="111명 "
             android:textAppearance="@style/TextAppearance.AppleSDGothic.Body"
             android:textColor="@color/carrot_grey500"
@@ -79,7 +80,7 @@
             android:text="@{meeting.town}"
             android:textAppearance="@style/TextAppearance.AppleSDGothic.Tag"
             android:textColor="@color/carrot_grey500"
-            app:layout_constraintStart_toEndOf="@id/iv_meeting_user_list"
+            app:layout_constraintStart_toStartOf="@id/iv_meeting_user_list"
             app:layout_constraintBottom_toBottomOf="@id/cv_meeting_iv" />
 
         <TextView
