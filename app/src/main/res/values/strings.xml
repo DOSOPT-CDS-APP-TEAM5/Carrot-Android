@@ -44,5 +44,17 @@
     <string name="join">가입하기</string>
     <string name="text_length12">%s/12</string>
     <string name="text_length200">%s/200</string>
+  
+    <string name="tv_explore_meeting_title">동천동 모임</string>
+    <string name="etv_hint_search">우리 동네 모임을 검색해보세요.</string>
+    <string name="tv_tab_title1">전체모임</string>
+    <string name="tv_tab_title2">나의 모임 일정</string>
+    <string name="tv_neighbor_title">우리동네 모임</string>
+    <string name="tv_new">새로 생겼어요</string>
+    <string name="tv_all_view">전체보기</string>
+    <string name="tv_exlplore_meeting">모임 둘러보기</string>
+    <string name="tv_want_meeting">원하는 모임이 없나요?</string>
+    <string name="tv_see_long_town">먼 동네의 모임 보기</string>
+    <string name="tv_write">글쓰기</string>
     <string name="join_meeting_look_more">더보기</string>
 </resources>
