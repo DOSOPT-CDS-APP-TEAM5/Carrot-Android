@@ -63,4 +63,14 @@
 - https://bitter-latency-758.notion.site/Branch-Convention-2-50c01fe585f54fa088e6c7591e525023
 
 ## Github Convention
--https://bitter-latency-758.notion.site/Github-Convention-2-5ab5bb9341574ba78d685d61539fb14d
+- https://bitter-latency-758.notion.site/Github-Convention-2-5ab5bb9341574ba78d685d61539fb14d
+
+
+## 시연영상
+
+
+https://github.com/DOSOPT-CDS-APP-TEAM5/Carrot-Android/assets/93514333/f33af511-c4f3-4ab1-85f5-9c0b927a6054
+
+
+https://github.com/DOSOPT-CDS-APP-TEAM5/Carrot-Android/assets/93514333/51f3453b-26f5-4081-9692-8d8aaa4043b9
+
